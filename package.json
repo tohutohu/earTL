@@ -1,0 +1,17 @@
+{
+  "name": "eartl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "earTL.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ohashi Koya <tohu.soy@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "speaker": "^0.3.0",
+    "twit": "^2.2.5",
+    "voicetext": "0.0.7",
+    "wav": "^1.0.1"
+  }
+}
