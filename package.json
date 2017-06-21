@@ -9,6 +9,8 @@
   "author": "Ohashi Koya <tohu.soy@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "node-microphone": "^0.1.3",
+    "node-record-lpcm16": "^0.3.0",
     "speaker": "^0.3.0",
     "twit": "^2.2.5",
     "voicetext": "0.0.7",

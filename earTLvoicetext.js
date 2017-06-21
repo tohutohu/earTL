@@ -11,6 +11,18 @@ let que = [];
 let playNow = false;
 var Speaker = require('speaker');
 
+const voices = []
+voices[0] = voice.SPEAKER.HARUKA;
+voices[1] = voice.SPEAKER.HIKARI;
+voices[2] = voice.SPEAKER.SHOW;
+voices[3] = voice.SPEAKER.TAKERU;
+voices[4] = voice.SPEAKER.SANTA;
+voices[5] = voice.SPEAKER.BEAR;
+const emotions = [];
+emotions[0] = voice.EMOTION.HAPPINESS;
+emotions[1] = voice.EMOTION.ANGER;
+emotions[2] = voice.EMOTION.SADNESS;
+
 
 const stream = client.stream('user');
 client.get('mutes/users/list',{skip_status:true,include_entities:false},function(err,mutes,res){
@@ -31,7 +43,8 @@ stream.on('tweet',async tweet => {
   }
   console.log(text);
 
-  voice.speaker(voice.SPEAKER.HARUKA).speed(100 + que.length*5).speak(text+' 。', (err, buf) => {
+  voice.speaker(voices[Math.floor(Math.random()*voices.length)]).speed(100 + que.length*5).speak(text+' 。', (err, buf) => {
+    if(err)console.log(err)
     que.push(buf);
     playTweet();
   });
